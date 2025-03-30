@@ -9,16 +9,14 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 app.use(express.json());
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
-    methods: ["GET,POST,DELETE,PUT,PATCH"],
-    credentials: true,
+    origin: ["http://localhost:5173", "https://vk-jobby.vercel.app"],
+    methods: ["GET", "POST", "DELETE", "PUT", "PATCH"],
+    credentials: true, // Allow cookies
   })
 );
 
 // Custom Middlewares
-const {
-  authenticateUser,
-} = require("./Middleware/UserAuthenticationMiddleware");
+const { authenticateUser } = require("./Middleware/UserAuthenticationMiddleware");
 
 // Routers
 const JobRouter = require("./Router/JobRouter");
