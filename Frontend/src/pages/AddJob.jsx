@@ -55,7 +55,7 @@ const AddJob = () => {
         // posting;
         try {
             const response = await axios.post(
-                "http://localhost:3000/api/v1/jobs",
+                "https://vk-jobby.onrender.com/api/v1/jobs",
                 newJob,
                 {
                     withCredentials: true,
